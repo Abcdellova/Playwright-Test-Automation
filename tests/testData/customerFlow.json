@@ -1,0 +1,56 @@
+{
+    "testUrl": "https://practicesoftwaretesting.com/",
+    "registerDetails": {
+        "dateOfBirth": "1995-06-15",
+        "postalCode": "1234",
+        "country": "PH",
+        "phoneNumber": "123456"
+    },
+    "listOfItem": {
+        "combinationPliers": "Combination Pliers",
+        "boltCutters": "Bolt Cutters",
+        "thorHammer": "Thor Hammer",
+        "sheetSander": "Sheet Sander",
+        "circularSaw": "Circular Saw",
+        "toolCabinet": "Tool Cabinet",
+        "sledgeHammer": "Sledgehammer",
+        "courtHammer": "Court Hammer"
+    },
+    "paymentMethod": {
+        "cashOnDelivery": "cash-on-delivery"
+    },
+    "sort": {
+        "ascending": "name,asc",
+        "descending": "name,desc"
+    },
+    "languages": {
+        "spanish": "es",
+        "german": "de"
+    },
+    "germanKeywords": [
+        "Sortieren",
+        "Preisspanne",
+        "Nach Kategorie",
+        "Nach Marken"
+    ],
+    "spanishKeywords": [
+        "Ordenar",
+        "Rango de precios",
+        "Buscar",
+        "Filtros",
+        "Por categoría",
+        "Por marca"
+    ],
+    "subject": "customer-service",
+    "testMessage": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+    "file": {
+        "path": "../playwright-test-portfolio/tests/testUploadFile.txt"
+    },
+    "sharedData": {
+        "emailStart": "test_",
+        "emailEnd": "@example.com",
+        "passWord": "Password@"
+    },
+    "blankData": ""
+    
+}
