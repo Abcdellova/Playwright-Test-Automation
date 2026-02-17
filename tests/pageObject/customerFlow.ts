@@ -23,10 +23,6 @@ export class CustomerFlow {
     return this.page.getByRole('link', { name: 'Sign in' });
   }
 
-  profileMenu(userName: string): Locator {
-    return this.page.getByRole('button', { name: userName });
-  }
-
   get cartIcon(): Locator {
     return this.page.getByRole('link', { name: 'cart' });
   }
@@ -119,10 +115,6 @@ export class CustomerFlow {
     return this.page.getByRole('link', { name: 'My favorites' });
   }
 
-  productNameInFavoriteTab(product: string): Locator {
-    return this.page.getByRole('heading', { name: product });
-  }
-
   get productPriceText(): Locator {
     return this.page.locator('[data-test="product-price"]');
   }
@@ -183,34 +175,12 @@ export class CustomerFlow {
     return this.page.getByLabel('Hammer');
   }
 
-  async getRandomString(length: number = 8): Promise<string> {
-    return Math.random().toString(36).slice(2, 2 + length);
-  }
-
   get sendButton(): Locator {
     return this.page.getByRole('button', { name: 'Send' });
   }
 
-  async searchItem(itemName: string): Promise<void> {
-    const currentValue = await this.searchField.inputValue();
-
-    if (currentValue !== itemName) {
-      await this.searchField.fill(itemName);
-    }
-
-    await this.searchButton.click();
-  }
-
   get searchField(): Locator {
     return this.page.locator("input#search-query");
-  }
-
-  itemDisplay(itemName: string): Locator {
-    return this.page.locator(`a.card img[alt='${itemName}']`);
-  }
-
-  languageOption(language: string): Locator {
-    return this.page.locator(`a[data-test="lang-${language.toLowerCase()}"]`);
   }
 
   get pageTitles(): Locator {
@@ -231,6 +201,36 @@ export class CustomerFlow {
 
   get contactSuccessAlert(): Locator {
     return this.page.locator('.alert-success')
+  }
+
+  profileMenu(userName: string): Locator {
+    return this.page.getByRole('button', { name: userName });
+  }
+
+  productNameInFavoriteTab(product: string): Locator {
+    return this.page.getByRole('heading', { name: product });
+  }
+
+  itemDisplay(itemName: string): Locator {
+    return this.page.locator(`a.card img[alt='${itemName}']`);
+  }
+
+  languageOption(language: string): Locator {
+    return this.page.locator(`a[data-test="lang-${language.toLowerCase()}"]`);
+  }
+
+  async getRandomString(length: number = 8): Promise<string> {
+    return Math.random().toString(36).slice(2, 2 + length);
+  }
+
+  async searchItem(itemName: string): Promise<void> {
+    const currentValue = await this.searchField.inputValue();
+
+    if (currentValue !== itemName) {
+      await this.searchField.fill(itemName);
+    }
+
+    await this.searchButton.click();
   }
 
   async setInputValue(element: Locator, value: string): Promise<void> {
